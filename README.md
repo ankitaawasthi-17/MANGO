@@ -1,6 +1,6 @@
-# OCL-AMPEWC
+# MANGO
 
-Online Continual Learning with Adaptive Meta Parameter EWC.
+Meta-learned Architecture-aware Networks with Gradient- Gating for Online Continual Learning.
 
 ## Datasets
 - CIFAR-100 (20 tasks, 5 classes/task)
