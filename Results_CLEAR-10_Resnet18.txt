@@ -1,0 +1,2058 @@
+
+
+
+
+CLEAR-10 (Domain Incremental Learning)
+
+Buffer   ACC ↑            AAA ↑            WC-Acc ↑        BWT ↑
+-----------------------------------------------------------------------
+2000     66.91 ± 1.20     66.35 ± 1.05     55.0 ± 1.1      +11.8 ± 1.6
+4000     67.67 ± 1.94     67.05 ± 1.6      55.3 ± 2.5      +12.6 ± 2.2
+
+
+
+
+
+
+
+/venv/lib/python3.10/site-packages/torch/autograd/graph.py", line 869, in _engine_run_backward
+    return Variable._execution_engine.run_backward(  # Calls into the C++ engine to run the backward pass
+KeyboardInterrupt
+
+(venv) awasthi9@cbric-gpu18:/tmp/awasthi9_ocl/OCL_v1_AMPHEWC$ for buffer in 2000 4000; do
+  for seed in 42 43 44 45 46; do
+    echo "===== CLEAR | Buffer=$buffer | Seed=$seed ====="
+    python3 main_clear.py --buffer_size $buffer --seed $seed
+  done
+done
+===== CLEAR | Buffer=2000 | Seed=42 =====
+laptop @ time 1: 300 entries
+camera @ time 1: 300 entries
+bus @ time 1: 300 entries
+sweater @ time 1: 300 entries
+dress @ time 1: 300 entries
+racing @ time 1: 300 entries
+hockey @ time 1: 300 entries
+cosplay @ time 1: 300 entries
+baseball @ time 1: 300 entries
+soccer @ time 1: 300 entries
+laptop @ time 2: 300 entries
+camera @ time 2: 300 entries
+bus @ time 2: 300 entries
+sweater @ time 2: 300 entries
+dress @ time 2: 300 entries
+racing @ time 2: 300 entries
+hockey @ time 2: 300 entries
+cosplay @ time 2: 300 entries
+baseball @ time 2: 300 entries
+soccer @ time 2: 300 entries
+laptop @ time 3: 300 entries
+camera @ time 3: 300 entries
+bus @ time 3: 300 entries
+sweater @ time 3: 300 entries
+dress @ time 3: 300 entries
+racing @ time 3: 300 entries
+hockey @ time 3: 300 entries
+cosplay @ time 3: 300 entries
+baseball @ time 3: 300 entries
+soccer @ time 3: 300 entries
+laptop @ time 4: 300 entries
+camera @ time 4: 300 entries
+bus @ time 4: 300 entries
+sweater @ time 4: 300 entries
+dress @ time 4: 300 entries
+racing @ time 4: 300 entries
+hockey @ time 4: 300 entries
+cosplay @ time 4: 300 entries
+baseball @ time 4: 300 entries
+soccer @ time 4: 300 entries
+laptop @ time 5: 300 entries
+camera @ time 5: 300 entries
+bus @ time 5: 300 entries
+sweater @ time 5: 300 entries
+dress @ time 5: 300 entries
+racing @ time 5: 300 entries
+hockey @ time 5: 300 entries
+cosplay @ time 5: 300 entries
+baseball @ time 5: 300 entries
+soccer @ time 5: 300 entries
+laptop @ time 6: 300 entries
+camera @ time 6: 300 entries
+bus @ time 6: 300 entries
+sweater @ time 6: 300 entries
+dress @ time 6: 300 entries
+racing @ time 6: 300 entries
+hockey @ time 6: 300 entries
+cosplay @ time 6: 300 entries
+baseball @ time 6: 300 entries
+soccer @ time 6: 300 entries
+laptop @ time 7: 300 entries
+camera @ time 7: 300 entries
+bus @ time 7: 300 entries
+sweater @ time 7: 300 entries
+dress @ time 7: 300 entries
+racing @ time 7: 300 entries
+hockey @ time 7: 300 entries
+cosplay @ time 7: 300 entries
+baseball @ time 7: 300 entries
+soccer @ time 7: 300 entries
+laptop @ time 8: 300 entries
+camera @ time 8: 300 entries
+bus @ time 8: 300 entries
+sweater @ time 8: 300 entries
+dress @ time 8: 300 entries
+racing @ time 8: 300 entries
+hockey @ time 8: 300 entries
+cosplay @ time 8: 300 entries
+baseball @ time 8: 300 entries
+soccer @ time 8: 300 entries
+laptop @ time 9: 300 entries
+camera @ time 9: 300 entries
+bus @ time 9: 300 entries
+sweater @ time 9: 300 entries
+dress @ time 9: 300 entries
+racing @ time 9: 300 entries
+hockey @ time 9: 300 entries
+cosplay @ time 9: 300 entries
+baseball @ time 9: 300 entries
+soccer @ time 9: 300 entries
+laptop @ time 10: 300 entries
+camera @ time 10: 300 entries
+bus @ time 10: 300 entries
+sweater @ time 10: 300 entries
+dress @ time 10: 300 entries
+racing @ time 10: 300 entries
+hockey @ time 10: 300 entries
+cosplay @ time 10: 300 entries
+baseball @ time 10: 300 entries
+soccer @ time 10: 300 entries
+
+Total CLEAR samples: 30000
+
+Task sizes:
+Task 0: 3000
+Task 1: 3000
+Task 2: 3000
+Task 3: 3000
+Task 4: 3000
+Task 5: 3000
+Task 6: 3000
+Task 7: 3000
+Task 8: 3000
+Task 9: 3000
+
+===== DATASET: CLEAR =====
+
+=======================================================
+  TASK 0
+=======================================================
+
+--- Evaluation ---
+TIL: [42.9]
+CIL: [42.9]
+
+=======================================================
+  TASK 1
+=======================================================
+
+--- Evaluation ---
+TIL: [48.4 67.3]
+CIL: [48.4 67.3]
+
+=======================================================
+  TASK 2
+=======================================================
+
+--- Evaluation ---
+TIL: [44.6 48.5 68.3]
+CIL: [44.6 48.5 68.3]
+
+=======================================================
+  TASK 3
+=======================================================
+
+--- Evaluation ---
+TIL: [46.  50.5 56.1 74.2]
+CIL: [46.  50.5 56.1 74.2]
+
+=======================================================
+  TASK 4
+=======================================================
+
+--- Evaluation ---
+TIL: [55.8 57.8 62.9 72.7 88. ]
+CIL: [55.8 57.8 62.9 72.7 88. ]
+
+=======================================================
+  TASK 5
+=======================================================
+
+--- Evaluation ---
+TIL: [48.9 52.5 54.7 57.8 62.9 78.1]
+CIL: [48.9 52.5 54.7 57.8 62.9 78.1]
+
+=======================================================
+  TASK 6
+=======================================================
+
+--- Evaluation ---
+TIL: [51.2 53.2 57.4 60.9 63.2 69.8 85.2]
+CIL: [51.2 53.2 57.4 60.9 63.2 69.8 85.2]
+
+=======================================================
+  TASK 7
+=======================================================
+
+--- Evaluation ---
+TIL: [54.8 57.5 60.2 63.6 67.  68.1 74.4 91.9]
+CIL: [54.8 57.5 60.2 63.6 67.  68.1 74.4 91.9]
+
+=======================================================
+  TASK 8
+=======================================================
+
+--- Evaluation ---
+TIL: [51.8 53.3 56.8 58.  60.1 60.5 61.2 68.6 84.6]
+CIL: [51.8 53.3 56.8 58.  60.1 60.5 61.2 68.6 84.6]
+
+=======================================================
+  TASK 9
+=======================================================
+
+--- Evaluation ---
+TIL: [54.2 55.9 59.5 62.3 62.6 62.9 64.3 67.1 74.2 91.9]
+CIL: [54.2 55.9 59.5 62.3 62.6 62.9 64.3 67.1 74.2 91.9]
+
+===== FINAL =====
+
+TIL FINAL ACC: 65.48
+
+CIL FINAL ACC: 65.48
+===== CLEAR | Buffer=2000 | Seed=43 =====
+laptop @ time 1: 300 entries
+camera @ time 1: 300 entries
+bus @ time 1: 300 entries
+sweater @ time 1: 300 entries
+dress @ time 1: 300 entries
+racing @ time 1: 300 entries
+hockey @ time 1: 300 entries
+cosplay @ time 1: 300 entries
+baseball @ time 1: 300 entries
+soccer @ time 1: 300 entries
+laptop @ time 2: 300 entries
+camera @ time 2: 300 entries
+bus @ time 2: 300 entries
+sweater @ time 2: 300 entries
+dress @ time 2: 300 entries
+racing @ time 2: 300 entries
+hockey @ time 2: 300 entries
+cosplay @ time 2: 300 entries
+baseball @ time 2: 300 entries
+soccer @ time 2: 300 entries
+laptop @ time 3: 300 entries
+camera @ time 3: 300 entries
+bus @ time 3: 300 entries
+sweater @ time 3: 300 entries
+dress @ time 3: 300 entries
+racing @ time 3: 300 entries
+hockey @ time 3: 300 entries
+cosplay @ time 3: 300 entries
+baseball @ time 3: 300 entries
+soccer @ time 3: 300 entries
+laptop @ time 4: 300 entries
+camera @ time 4: 300 entries
+bus @ time 4: 300 entries
+sweater @ time 4: 300 entries
+dress @ time 4: 300 entries
+racing @ time 4: 300 entries
+hockey @ time 4: 300 entries
+cosplay @ time 4: 300 entries
+baseball @ time 4: 300 entries
+soccer @ time 4: 300 entries
+laptop @ time 5: 300 entries
+camera @ time 5: 300 entries
+bus @ time 5: 300 entries
+sweater @ time 5: 300 entries
+dress @ time 5: 300 entries
+racing @ time 5: 300 entries
+hockey @ time 5: 300 entries
+cosplay @ time 5: 300 entries
+baseball @ time 5: 300 entries
+soccer @ time 5: 300 entries
+laptop @ time 6: 300 entries
+camera @ time 6: 300 entries
+bus @ time 6: 300 entries
+sweater @ time 6: 300 entries
+dress @ time 6: 300 entries
+racing @ time 6: 300 entries
+hockey @ time 6: 300 entries
+cosplay @ time 6: 300 entries
+baseball @ time 6: 300 entries
+soccer @ time 6: 300 entries
+laptop @ time 7: 300 entries
+camera @ time 7: 300 entries
+bus @ time 7: 300 entries
+sweater @ time 7: 300 entries
+dress @ time 7: 300 entries
+racing @ time 7: 300 entries
+hockey @ time 7: 300 entries
+cosplay @ time 7: 300 entries
+baseball @ time 7: 300 entries
+soccer @ time 7: 300 entries
+laptop @ time 8: 300 entries
+camera @ time 8: 300 entries
+bus @ time 8: 300 entries
+sweater @ time 8: 300 entries
+dress @ time 8: 300 entries
+racing @ time 8: 300 entries
+hockey @ time 8: 300 entries
+cosplay @ time 8: 300 entries
+baseball @ time 8: 300 entries
+soccer @ time 8: 300 entries
+laptop @ time 9: 300 entries
+camera @ time 9: 300 entries
+bus @ time 9: 300 entries
+sweater @ time 9: 300 entries
+dress @ time 9: 300 entries
+racing @ time 9: 300 entries
+hockey @ time 9: 300 entries
+cosplay @ time 9: 300 entries
+baseball @ time 9: 300 entries
+soccer @ time 9: 300 entries
+laptop @ time 10: 300 entries
+camera @ time 10: 300 entries
+bus @ time 10: 300 entries
+sweater @ time 10: 300 entries
+dress @ time 10: 300 entries
+racing @ time 10: 300 entries
+hockey @ time 10: 300 entries
+cosplay @ time 10: 300 entries
+baseball @ time 10: 300 entries
+soccer @ time 10: 300 entries
+
+Total CLEAR samples: 30000
+
+Task sizes:
+Task 0: 3000
+Task 1: 3000
+Task 2: 3000
+Task 3: 3000
+Task 4: 3000
+Task 5: 3000
+Task 6: 3000
+Task 7: 3000
+Task 8: 3000
+Task 9: 3000
+
+===== DATASET: CLEAR =====
+
+=======================================================
+  TASK 0
+=======================================================
+
+--- Evaluation ---
+TIL: [57.9]
+CIL: [57.9]
+
+=======================================================
+  TASK 1
+=======================================================
+
+--- Evaluation ---
+TIL: [45.4 60.7]
+CIL: [45.4 60.7]
+
+=======================================================
+  TASK 2
+=======================================================
+
+--- Evaluation ---
+TIL: [46.7 50.9 61.8]
+CIL: [46.7 50.9 61.8]
+
+=======================================================
+  TASK 3
+=======================================================
+
+--- Evaluation ---
+TIL: [54.3 58.6 66.8 84.4]
+CIL: [54.3 58.6 66.8 84.4]
+
+=======================================================
+  TASK 4
+=======================================================
+
+--- Evaluation ---
+TIL: [51.7 55.1 61.1 67.5 80.7]
+CIL: [51.7 55.1 61.1 67.5 80.7]
+
+=======================================================
+  TASK 5
+=======================================================
+
+--- Evaluation ---
+TIL: [53.6 57.1 60.6 64.6 71.6 86.8]
+CIL: [53.6 57.1 60.6 64.6 71.6 86.8]
+
+=======================================================
+  TASK 6
+=======================================================
+
+--- Evaluation ---
+TIL: [53.8 56.  58.  61.6 65.3 68.4 84.2]
+CIL: [53.8 56.  58.  61.6 65.3 68.4 84.2]
+
+=======================================================
+  TASK 7
+=======================================================
+
+--- Evaluation ---
+TIL: [52.1 54.4 58.8 61.1 62.4 63.6 68.6 83.9]
+CIL: [52.1 54.4 58.8 61.1 62.4 63.6 68.6 83.9]
+
+=======================================================
+  TASK 8
+=======================================================
+
+--- Evaluation ---
+TIL: [55.9 58.5 61.4 66.6 65.5 66.5 68.9 75.9 90.9]
+CIL: [55.9 58.5 61.4 66.6 65.5 66.5 68.9 75.9 90.9]
+
+=======================================================
+  TASK 9
+=======================================================
+
+--- Evaluation ---
+TIL: [57.2 59.5 61.7 64.2 67.1 65.3 68.4 73.  78.2 94.2]
+CIL: [57.2 59.5 61.7 64.2 67.1 65.3 68.4 73.  78.2 94.2]
+
+===== FINAL =====
+
+TIL FINAL ACC: 68.89
+
+CIL FINAL ACC: 68.89
+===== CLEAR | Buffer=2000 | Seed=44 =====
+laptop @ time 1: 300 entries
+camera @ time 1: 300 entries
+bus @ time 1: 300 entries
+sweater @ time 1: 300 entries
+dress @ time 1: 300 entries
+racing @ time 1: 300 entries
+hockey @ time 1: 300 entries
+cosplay @ time 1: 300 entries
+baseball @ time 1: 300 entries
+soccer @ time 1: 300 entries
+laptop @ time 2: 300 entries
+camera @ time 2: 300 entries
+bus @ time 2: 300 entries
+sweater @ time 2: 300 entries
+dress @ time 2: 300 entries
+racing @ time 2: 300 entries
+hockey @ time 2: 300 entries
+cosplay @ time 2: 300 entries
+baseball @ time 2: 300 entries
+soccer @ time 2: 300 entries
+laptop @ time 3: 300 entries
+camera @ time 3: 300 entries
+bus @ time 3: 300 entries
+sweater @ time 3: 300 entries
+dress @ time 3: 300 entries
+racing @ time 3: 300 entries
+hockey @ time 3: 300 entries
+cosplay @ time 3: 300 entries
+baseball @ time 3: 300 entries
+soccer @ time 3: 300 entries
+laptop @ time 4: 300 entries
+camera @ time 4: 300 entries
+bus @ time 4: 300 entries
+sweater @ time 4: 300 entries
+dress @ time 4: 300 entries
+racing @ time 4: 300 entries
+hockey @ time 4: 300 entries
+cosplay @ time 4: 300 entries
+baseball @ time 4: 300 entries
+soccer @ time 4: 300 entries
+laptop @ time 5: 300 entries
+camera @ time 5: 300 entries
+bus @ time 5: 300 entries
+sweater @ time 5: 300 entries
+dress @ time 5: 300 entries
+racing @ time 5: 300 entries
+hockey @ time 5: 300 entries
+cosplay @ time 5: 300 entries
+baseball @ time 5: 300 entries
+soccer @ time 5: 300 entries
+laptop @ time 6: 300 entries
+camera @ time 6: 300 entries
+bus @ time 6: 300 entries
+sweater @ time 6: 300 entries
+dress @ time 6: 300 entries
+racing @ time 6: 300 entries
+hockey @ time 6: 300 entries
+cosplay @ time 6: 300 entries
+baseball @ time 6: 300 entries
+soccer @ time 6: 300 entries
+laptop @ time 7: 300 entries
+camera @ time 7: 300 entries
+bus @ time 7: 300 entries
+sweater @ time 7: 300 entries
+dress @ time 7: 300 entries
+racing @ time 7: 300 entries
+hockey @ time 7: 300 entries
+cosplay @ time 7: 300 entries
+baseball @ time 7: 300 entries
+soccer @ time 7: 300 entries
+laptop @ time 8: 300 entries
+camera @ time 8: 300 entries
+bus @ time 8: 300 entries
+sweater @ time 8: 300 entries
+dress @ time 8: 300 entries
+racing @ time 8: 300 entries
+hockey @ time 8: 300 entries
+cosplay @ time 8: 300 entries
+baseball @ time 8: 300 entries
+soccer @ time 8: 300 entries
+laptop @ time 9: 300 entries
+camera @ time 9: 300 entries
+bus @ time 9: 300 entries
+sweater @ time 9: 300 entries
+dress @ time 9: 300 entries
+racing @ time 9: 300 entries
+hockey @ time 9: 300 entries
+cosplay @ time 9: 300 entries
+baseball @ time 9: 300 entries
+soccer @ time 9: 300 entries
+laptop @ time 10: 300 entries
+camera @ time 10: 300 entries
+bus @ time 10: 300 entries
+sweater @ time 10: 300 entries
+dress @ time 10: 300 entries
+racing @ time 10: 300 entries
+hockey @ time 10: 300 entries
+cosplay @ time 10: 300 entries
+baseball @ time 10: 300 entries
+soccer @ time 10: 300 entries
+
+Total CLEAR samples: 30000
+
+Task sizes:
+Task 0: 3000
+Task 1: 3000
+Task 2: 3000
+Task 3: 3000
+Task 4: 3000
+Task 5: 3000
+Task 6: 3000
+Task 7: 3000
+Task 8: 3000
+Task 9: 3000
+
+===== DATASET: CLEAR =====
+
+=======================================================
+  TASK 0
+=======================================================
+
+--- Evaluation ---
+TIL: [35.2]
+CIL: [35.2]
+
+=======================================================
+  TASK 1
+=======================================================
+
+--- Evaluation ---
+TIL: [40.3 56.9]
+CIL: [40.3 56.9]
+
+=======================================================
+  TASK 2
+=======================================================
+
+--- Evaluation ---
+TIL: [50.9 57.4 74.6]
+CIL: [50.9 57.4 74.6]
+
+=======================================================
+  TASK 3
+=======================================================
+
+--- Evaluation ---
+TIL: [48.  54.3 60.7 76.3]
+CIL: [48.  54.3 60.7 76.3]
+
+=======================================================
+  TASK 4
+=======================================================
+
+--- Evaluation ---
+TIL: [50.2 52.7 58.7 67.  80.2]
+CIL: [50.2 52.7 58.7 67.  80.2]
+
+=======================================================
+  TASK 5
+=======================================================
+
+--- Evaluation ---
+TIL: [48.1 50.6 55.1 58.  62.1 77.3]
+CIL: [48.1 50.6 55.1 58.  62.1 77.3]
+
+=======================================================
+  TASK 6
+=======================================================
+
+--- Evaluation ---
+TIL: [51.5 51.  56.2 58.3 58.8 62.5 75.2]
+CIL: [51.5 51.  56.2 58.3 58.8 62.5 75.2]
+
+=======================================================
+  TASK 7
+=======================================================
+
+--- Evaluation ---
+TIL: [57.3 59.  60.9 65.3 68.1 69.1 75.5 91.3]
+CIL: [57.3 59.  60.9 65.3 68.1 69.1 75.5 91.3]
+
+=======================================================
+  TASK 8
+=======================================================
+
+--- Evaluation ---
+TIL: [55.4 58.  61.7 64.  64.9 66.8 68.3 75.3 90.5]
+CIL: [55.4 58.  61.7 64.  64.9 66.8 68.3 75.3 90.5]
+
+=======================================================
+  TASK 9
+=======================================================
+
+--- Evaluation ---
+TIL: [54.3 56.  61.8 62.1 62.2 64.4 65.7 68.8 76.4 94. ]
+CIL: [54.3 56.  61.8 62.1 62.2 64.4 65.7 68.8 76.4 94. ]
+
+===== FINAL =====
+
+TIL FINAL ACC: 66.55
+
+CIL FINAL ACC: 66.55
+===== CLEAR | Buffer=2000 | Seed=45 =====
+laptop @ time 1: 300 entries
+camera @ time 1: 300 entries
+bus @ time 1: 300 entries
+sweater @ time 1: 300 entries
+dress @ time 1: 300 entries
+racing @ time 1: 300 entries
+hockey @ time 1: 300 entries
+cosplay @ time 1: 300 entries
+baseball @ time 1: 300 entries
+soccer @ time 1: 300 entries
+laptop @ time 2: 300 entries
+camera @ time 2: 300 entries
+bus @ time 2: 300 entries
+sweater @ time 2: 300 entries
+dress @ time 2: 300 entries
+racing @ time 2: 300 entries
+hockey @ time 2: 300 entries
+cosplay @ time 2: 300 entries
+baseball @ time 2: 300 entries
+soccer @ time 2: 300 entries
+laptop @ time 3: 300 entries
+camera @ time 3: 300 entries
+bus @ time 3: 300 entries
+sweater @ time 3: 300 entries
+dress @ time 3: 300 entries
+racing @ time 3: 300 entries
+hockey @ time 3: 300 entries
+cosplay @ time 3: 300 entries
+baseball @ time 3: 300 entries
+soccer @ time 3: 300 entries
+laptop @ time 4: 300 entries
+camera @ time 4: 300 entries
+bus @ time 4: 300 entries
+sweater @ time 4: 300 entries
+dress @ time 4: 300 entries
+racing @ time 4: 300 entries
+hockey @ time 4: 300 entries
+cosplay @ time 4: 300 entries
+baseball @ time 4: 300 entries
+soccer @ time 4: 300 entries
+laptop @ time 5: 300 entries
+camera @ time 5: 300 entries
+bus @ time 5: 300 entries
+sweater @ time 5: 300 entries
+dress @ time 5: 300 entries
+racing @ time 5: 300 entries
+hockey @ time 5: 300 entries
+cosplay @ time 5: 300 entries
+baseball @ time 5: 300 entries
+soccer @ time 5: 300 entries
+laptop @ time 6: 300 entries
+camera @ time 6: 300 entries
+bus @ time 6: 300 entries
+sweater @ time 6: 300 entries
+dress @ time 6: 300 entries
+racing @ time 6: 300 entries
+hockey @ time 6: 300 entries
+cosplay @ time 6: 300 entries
+baseball @ time 6: 300 entries
+soccer @ time 6: 300 entries
+laptop @ time 7: 300 entries
+camera @ time 7: 300 entries
+bus @ time 7: 300 entries
+sweater @ time 7: 300 entries
+dress @ time 7: 300 entries
+racing @ time 7: 300 entries
+hockey @ time 7: 300 entries
+cosplay @ time 7: 300 entries
+baseball @ time 7: 300 entries
+soccer @ time 7: 300 entries
+laptop @ time 8: 300 entries
+camera @ time 8: 300 entries
+bus @ time 8: 300 entries
+sweater @ time 8: 300 entries
+dress @ time 8: 300 entries
+racing @ time 8: 300 entries
+hockey @ time 8: 300 entries
+cosplay @ time 8: 300 entries
+baseball @ time 8: 300 entries
+soccer @ time 8: 300 entries
+laptop @ time 9: 300 entries
+camera @ time 9: 300 entries
+bus @ time 9: 300 entries
+sweater @ time 9: 300 entries
+dress @ time 9: 300 entries
+racing @ time 9: 300 entries
+hockey @ time 9: 300 entries
+cosplay @ time 9: 300 entries
+baseball @ time 9: 300 entries
+soccer @ time 9: 300 entries
+laptop @ time 10: 300 entries
+camera @ time 10: 300 entries
+bus @ time 10: 300 entries
+sweater @ time 10: 300 entries
+dress @ time 10: 300 entries
+racing @ time 10: 300 entries
+hockey @ time 10: 300 entries
+cosplay @ time 10: 300 entries
+baseball @ time 10: 300 entries
+soccer @ time 10: 300 entries
+
+Total CLEAR samples: 30000
+
+Task sizes:
+Task 0: 3000
+Task 1: 3000
+Task 2: 3000
+Task 3: 3000
+Task 4: 3000
+Task 5: 3000
+Task 6: 3000
+Task 7: 3000
+Task 8: 3000
+Task 9: 3000
+
+===== DATASET: CLEAR =====
+
+=======================================================
+  TASK 0
+=======================================================
+
+--- Evaluation ---
+TIL: [51.]
+CIL: [51.]
+
+=======================================================
+  TASK 1
+=======================================================
+
+--- Evaluation ---
+TIL: [48.7 66.2]
+CIL: [48.7 66.2]
+
+=======================================================
+  TASK 2
+=======================================================
+
+--- Evaluation ---
+TIL: [48.6 55.8 75. ]
+CIL: [48.6 55.8 75. ]
+
+=======================================================
+  TASK 3
+=======================================================
+
+--- Evaluation ---
+TIL: [49.9 52.4 60.5 75.4]
+CIL: [49.9 52.4 60.5 75.4]
+
+=======================================================
+  TASK 4
+=======================================================
+
+--- Evaluation ---
+TIL: [49.  52.4 56.1 65.4 78.2]
+CIL: [49.  52.4 56.1 65.4 78.2]
+
+=======================================================
+  TASK 5
+=======================================================
+
+--- Evaluation ---
+TIL: [52.9 54.4 62.1 66.5 72.4 88.6]
+CIL: [52.9 54.4 62.1 66.5 72.4 88.6]
+
+=======================================================
+  TASK 6
+=======================================================
+
+--- Evaluation ---
+TIL: [49.  52.  54.8 60.2 60.7 64.9 80.8]
+CIL: [49.  52.  54.8 60.2 60.7 64.9 80.8]
+
+=======================================================
+  TASK 7
+=======================================================
+
+--- Evaluation ---
+TIL: [52.3 54.1 56.3 59.4 60.5 62.9 66.1 82.3]
+CIL: [52.3 54.1 56.3 59.4 60.5 62.9 66.1 82.3]
+
+=======================================================
+  TASK 8
+=======================================================
+
+--- Evaluation ---
+TIL: [51.7 53.8 57.8 60.3 61.8 64.  64.4 72.1 89.8]
+CIL: [51.7 53.8 57.8 60.3 61.8 64.  64.4 72.1 89.8]
+
+=======================================================
+  TASK 9
+=======================================================
+
+--- Evaluation ---
+TIL: [55.  58.3 60.7 63.  63.2 65.1 66.2 69.7 77.8 95.1]
+CIL: [55.  58.3 60.7 63.  63.2 65.1 66.2 69.7 77.8 95.1]
+
+===== FINAL =====
+
+TIL FINAL ACC: 67.41
+
+CIL FINAL ACC: 67.41
+===== CLEAR | Buffer=2000 | Seed=46 =====
+laptop @ time 1: 300 entries
+camera @ time 1: 300 entries
+bus @ time 1: 300 entries
+sweater @ time 1: 300 entries
+dress @ time 1: 300 entries
+racing @ time 1: 300 entries
+hockey @ time 1: 300 entries
+cosplay @ time 1: 300 entries
+baseball @ time 1: 300 entries
+soccer @ time 1: 300 entries
+laptop @ time 2: 300 entries
+camera @ time 2: 300 entries
+bus @ time 2: 300 entries
+sweater @ time 2: 300 entries
+dress @ time 2: 300 entries
+racing @ time 2: 300 entries
+hockey @ time 2: 300 entries
+cosplay @ time 2: 300 entries
+baseball @ time 2: 300 entries
+soccer @ time 2: 300 entries
+laptop @ time 3: 300 entries
+camera @ time 3: 300 entries
+bus @ time 3: 300 entries
+sweater @ time 3: 300 entries
+dress @ time 3: 300 entries
+racing @ time 3: 300 entries
+hockey @ time 3: 300 entries
+cosplay @ time 3: 300 entries
+baseball @ time 3: 300 entries
+soccer @ time 3: 300 entries
+laptop @ time 4: 300 entries
+camera @ time 4: 300 entries
+bus @ time 4: 300 entries
+sweater @ time 4: 300 entries
+dress @ time 4: 300 entries
+racing @ time 4: 300 entries
+hockey @ time 4: 300 entries
+cosplay @ time 4: 300 entries
+baseball @ time 4: 300 entries
+soccer @ time 4: 300 entries
+laptop @ time 5: 300 entries
+camera @ time 5: 300 entries
+bus @ time 5: 300 entries
+sweater @ time 5: 300 entries
+dress @ time 5: 300 entries
+racing @ time 5: 300 entries
+hockey @ time 5: 300 entries
+cosplay @ time 5: 300 entries
+baseball @ time 5: 300 entries
+soccer @ time 5: 300 entries
+laptop @ time 6: 300 entries
+camera @ time 6: 300 entries
+bus @ time 6: 300 entries
+sweater @ time 6: 300 entries
+dress @ time 6: 300 entries
+racing @ time 6: 300 entries
+hockey @ time 6: 300 entries
+cosplay @ time 6: 300 entries
+baseball @ time 6: 300 entries
+soccer @ time 6: 300 entries
+laptop @ time 7: 300 entries
+camera @ time 7: 300 entries
+bus @ time 7: 300 entries
+sweater @ time 7: 300 entries
+dress @ time 7: 300 entries
+racing @ time 7: 300 entries
+hockey @ time 7: 300 entries
+cosplay @ time 7: 300 entries
+baseball @ time 7: 300 entries
+soccer @ time 7: 300 entries
+laptop @ time 8: 300 entries
+camera @ time 8: 300 entries
+bus @ time 8: 300 entries
+sweater @ time 8: 300 entries
+dress @ time 8: 300 entries
+racing @ time 8: 300 entries
+hockey @ time 8: 300 entries
+cosplay @ time 8: 300 entries
+baseball @ time 8: 300 entries
+soccer @ time 8: 300 entries
+laptop @ time 9: 300 entries
+camera @ time 9: 300 entries
+bus @ time 9: 300 entries
+sweater @ time 9: 300 entries
+dress @ time 9: 300 entries
+racing @ time 9: 300 entries
+hockey @ time 9: 300 entries
+cosplay @ time 9: 300 entries
+baseball @ time 9: 300 entries
+soccer @ time 9: 300 entries
+laptop @ time 10: 300 entries
+camera @ time 10: 300 entries
+bus @ time 10: 300 entries
+sweater @ time 10: 300 entries
+dress @ time 10: 300 entries
+racing @ time 10: 300 entries
+hockey @ time 10: 300 entries
+cosplay @ time 10: 300 entries
+baseball @ time 10: 300 entries
+soccer @ time 10: 300 entries
+
+Total CLEAR samples: 30000
+
+Task sizes:
+Task 0: 3000
+Task 1: 3000
+Task 2: 3000
+Task 3: 3000
+Task 4: 3000
+Task 5: 3000
+Task 6: 3000
+Task 7: 3000
+Task 8: 3000
+Task 9: 3000
+
+===== DATASET: CLEAR =====
+
+=======================================================
+  TASK 0
+=======================================================
+
+--- Evaluation ---
+TIL: [40.8]
+CIL: [40.8]
+
+=======================================================
+  TASK 1
+=======================================================
+
+--- Evaluation ---
+TIL: [53.5 73.8]
+CIL: [53.5 73.8]
+
+=======================================================
+  TASK 2
+=======================================================
+
+--- Evaluation ---
+TIL: [46.7 52.5 69.4]
+CIL: [46.7 52.5 69.4]
+
+=======================================================
+  TASK 3
+=======================================================
+
+--- Evaluation ---
+TIL: [47.9 53.4 62.2 77.7]
+CIL: [47.9 53.4 62.2 77.7]
+
+=======================================================
+  TASK 4
+=======================================================
+
+--- Evaluation ---
+TIL: [51.5 53.5 60.1 64.6 78.4]
+CIL: [51.5 53.5 60.1 64.6 78.4]
+
+=======================================================
+  TASK 5
+=======================================================
+
+--- Evaluation ---
+TIL: [53.3 53.7 58.7 62.6 68.1 80.1]
+CIL: [53.3 53.7 58.7 62.6 68.1 80.1]
+
+=======================================================
+  TASK 6
+=======================================================
+
+--- Evaluation ---
+TIL: [55.6 55.6 62.4 66.1 67.9 72.  87.8]
+CIL: [55.6 55.6 62.4 66.1 67.9 72.  87.8]
+
+=======================================================
+  TASK 7
+=======================================================
+
+--- Evaluation ---
+TIL: [51.9 51.7 56.6 58.6 60.7 61.5 67.8 84.2]
+CIL: [51.9 51.7 56.6 58.6 60.7 61.5 67.8 84.2]
+
+=======================================================
+  TASK 8
+=======================================================
+
+--- Evaluation ---
+TIL: [54.3 56.1 57.8 59.9 61.3 62.2 64.3 72.1 86.6]
+CIL: [54.3 56.1 57.8 59.9 61.3 62.2 64.3 72.1 86.6]
+
+=======================================================
+  TASK 9
+=======================================================
+
+--- Evaluation ---
+TIL: [54.3 56.6 59.3 63.  62.6 63.8 65.7 67.8 76.  93.2]
+CIL: [54.3 56.6 59.3 63.  62.6 63.8 65.7 67.8 76.  93.2]
+
+===== FINAL =====
+
+TIL FINAL ACC: 66.23
+
+CIL FINAL ACC: 66.23
+===== CLEAR | Buffer=4000 | Seed=42 =====
+laptop @ time 1: 300 entries
+camera @ time 1: 300 entries
+bus @ time 1: 300 entries
+sweater @ time 1: 300 entries
+dress @ time 1: 300 entries
+racing @ time 1: 300 entries
+hockey @ time 1: 300 entries
+cosplay @ time 1: 300 entries
+baseball @ time 1: 300 entries
+soccer @ time 1: 300 entries
+laptop @ time 2: 300 entries
+camera @ time 2: 300 entries
+bus @ time 2: 300 entries
+sweater @ time 2: 300 entries
+dress @ time 2: 300 entries
+racing @ time 2: 300 entries
+hockey @ time 2: 300 entries
+cosplay @ time 2: 300 entries
+baseball @ time 2: 300 entries
+soccer @ time 2: 300 entries
+laptop @ time 3: 300 entries
+camera @ time 3: 300 entries
+bus @ time 3: 300 entries
+sweater @ time 3: 300 entries
+dress @ time 3: 300 entries
+racing @ time 3: 300 entries
+hockey @ time 3: 300 entries
+cosplay @ time 3: 300 entries
+baseball @ time 3: 300 entries
+soccer @ time 3: 300 entries
+laptop @ time 4: 300 entries
+camera @ time 4: 300 entries
+bus @ time 4: 300 entries
+sweater @ time 4: 300 entries
+dress @ time 4: 300 entries
+racing @ time 4: 300 entries
+hockey @ time 4: 300 entries
+cosplay @ time 4: 300 entries
+baseball @ time 4: 300 entries
+soccer @ time 4: 300 entries
+laptop @ time 5: 300 entries
+camera @ time 5: 300 entries
+bus @ time 5: 300 entries
+sweater @ time 5: 300 entries
+dress @ time 5: 300 entries
+racing @ time 5: 300 entries
+hockey @ time 5: 300 entries
+cosplay @ time 5: 300 entries
+baseball @ time 5: 300 entries
+soccer @ time 5: 300 entries
+laptop @ time 6: 300 entries
+camera @ time 6: 300 entries
+bus @ time 6: 300 entries
+sweater @ time 6: 300 entries
+dress @ time 6: 300 entries
+racing @ time 6: 300 entries
+hockey @ time 6: 300 entries
+cosplay @ time 6: 300 entries
+baseball @ time 6: 300 entries
+soccer @ time 6: 300 entries
+laptop @ time 7: 300 entries
+camera @ time 7: 300 entries
+bus @ time 7: 300 entries
+sweater @ time 7: 300 entries
+dress @ time 7: 300 entries
+racing @ time 7: 300 entries
+hockey @ time 7: 300 entries
+cosplay @ time 7: 300 entries
+baseball @ time 7: 300 entries
+soccer @ time 7: 300 entries
+laptop @ time 8: 300 entries
+camera @ time 8: 300 entries
+bus @ time 8: 300 entries
+sweater @ time 8: 300 entries
+dress @ time 8: 300 entries
+racing @ time 8: 300 entries
+hockey @ time 8: 300 entries
+cosplay @ time 8: 300 entries
+baseball @ time 8: 300 entries
+soccer @ time 8: 300 entries
+laptop @ time 9: 300 entries
+camera @ time 9: 300 entries
+bus @ time 9: 300 entries
+sweater @ time 9: 300 entries
+dress @ time 9: 300 entries
+racing @ time 9: 300 entries
+hockey @ time 9: 300 entries
+cosplay @ time 9: 300 entries
+baseball @ time 9: 300 entries
+soccer @ time 9: 300 entries
+laptop @ time 10: 300 entries
+camera @ time 10: 300 entries
+bus @ time 10: 300 entries
+sweater @ time 10: 300 entries
+dress @ time 10: 300 entries
+racing @ time 10: 300 entries
+hockey @ time 10: 300 entries
+cosplay @ time 10: 300 entries
+baseball @ time 10: 300 entries
+soccer @ time 10: 300 entries
+
+Total CLEAR samples: 30000
+
+Task sizes:
+Task 0: 3000
+Task 1: 3000
+Task 2: 3000
+Task 3: 3000
+Task 4: 3000
+Task 5: 3000
+Task 6: 3000
+Task 7: 3000
+Task 8: 3000
+Task 9: 3000
+
+===== DATASET: CLEAR =====
+
+=======================================================
+  TASK 0
+=======================================================
+
+--- Evaluation ---
+TIL: [46.1]
+CIL: [46.1]
+
+=======================================================
+  TASK 1
+=======================================================
+
+--- Evaluation ---
+TIL: [48.8 68.6]
+CIL: [48.8 68.6]
+
+=======================================================
+  TASK 2
+=======================================================
+
+--- Evaluation ---
+TIL: [46.7 51.7 73.1]
+CIL: [46.7 51.7 73.1]
+
+=======================================================
+  TASK 3
+=======================================================
+
+--- Evaluation ---
+TIL: [48.7 55.6 62.  80.8]
+CIL: [48.7 55.6 62.  80.8]
+
+=======================================================
+  TASK 4
+=======================================================
+
+--- Evaluation ---
+TIL: [48.8 51.3 56.2 62.4 79.2]
+CIL: [48.8 51.3 56.2 62.4 79.2]
+
+=======================================================
+  TASK 5
+=======================================================
+
+--- Evaluation ---
+TIL: [49.7 53.1 57.3 61.7 67.6 80.2]
+CIL: [49.7 53.1 57.3 61.7 67.6 80.2]
+
+=======================================================
+  TASK 6
+=======================================================
+
+--- Evaluation ---
+TIL: [54.2 53.2 58.2 60.4 61.8 64.  78.2]
+CIL: [54.2 53.2 58.2 60.4 61.8 64.  78.2]
+
+=======================================================
+  TASK 7
+=======================================================
+
+--- Evaluation ---
+TIL: [55.  57.  60.4 61.7 65.5 66.8 72.1 89.4]
+CIL: [55.  57.  60.4 61.7 65.5 66.8 72.1 89.4]
+
+=======================================================
+  TASK 8
+=======================================================
+
+--- Evaluation ---
+TIL: [49.5 52.1 55.3 57.4 57.6 59.8 61.4 66.  83.2]
+CIL: [49.5 52.1 55.3 57.4 57.6 59.8 61.4 66.  83.2]
+
+=======================================================
+  TASK 9
+=======================================================
+
+--- Evaluation ---
+TIL: [51.7 55.7 59.3 61.6 62.8 64.6 64.7 67.9 75.6 92.3]
+CIL: [51.7 55.7 59.3 61.6 62.8 64.6 64.7 67.9 75.6 92.3]
+
+===== FINAL =====
+
+TIL FINAL ACC: 65.62
+
+CIL FINAL ACC: 65.62
+===== CLEAR | Buffer=4000 | Seed=43 =====
+laptop @ time 1: 300 entries
+camera @ time 1: 300 entries
+bus @ time 1: 300 entries
+sweater @ time 1: 300 entries
+dress @ time 1: 300 entries
+racing @ time 1: 300 entries
+hockey @ time 1: 300 entries
+cosplay @ time 1: 300 entries
+baseball @ time 1: 300 entries
+soccer @ time 1: 300 entries
+laptop @ time 2: 300 entries
+camera @ time 2: 300 entries
+bus @ time 2: 300 entries
+sweater @ time 2: 300 entries
+dress @ time 2: 300 entries
+racing @ time 2: 300 entries
+hockey @ time 2: 300 entries
+cosplay @ time 2: 300 entries
+baseball @ time 2: 300 entries
+soccer @ time 2: 300 entries
+laptop @ time 3: 300 entries
+camera @ time 3: 300 entries
+bus @ time 3: 300 entries
+sweater @ time 3: 300 entries
+dress @ time 3: 300 entries
+racing @ time 3: 300 entries
+hockey @ time 3: 300 entries
+cosplay @ time 3: 300 entries
+baseball @ time 3: 300 entries
+soccer @ time 3: 300 entries
+laptop @ time 4: 300 entries
+camera @ time 4: 300 entries
+bus @ time 4: 300 entries
+sweater @ time 4: 300 entries
+dress @ time 4: 300 entries
+racing @ time 4: 300 entries
+hockey @ time 4: 300 entries
+cosplay @ time 4: 300 entries
+baseball @ time 4: 300 entries
+soccer @ time 4: 300 entries
+laptop @ time 5: 300 entries
+camera @ time 5: 300 entries
+bus @ time 5: 300 entries
+sweater @ time 5: 300 entries
+dress @ time 5: 300 entries
+racing @ time 5: 300 entries
+hockey @ time 5: 300 entries
+cosplay @ time 5: 300 entries
+baseball @ time 5: 300 entries
+soccer @ time 5: 300 entries
+laptop @ time 6: 300 entries
+camera @ time 6: 300 entries
+bus @ time 6: 300 entries
+sweater @ time 6: 300 entries
+dress @ time 6: 300 entries
+racing @ time 6: 300 entries
+hockey @ time 6: 300 entries
+cosplay @ time 6: 300 entries
+baseball @ time 6: 300 entries
+soccer @ time 6: 300 entries
+laptop @ time 7: 300 entries
+camera @ time 7: 300 entries
+bus @ time 7: 300 entries
+sweater @ time 7: 300 entries
+dress @ time 7: 300 entries
+racing @ time 7: 300 entries
+hockey @ time 7: 300 entries
+cosplay @ time 7: 300 entries
+baseball @ time 7: 300 entries
+soccer @ time 7: 300 entries
+laptop @ time 8: 300 entries
+camera @ time 8: 300 entries
+bus @ time 8: 300 entries
+sweater @ time 8: 300 entries
+dress @ time 8: 300 entries
+racing @ time 8: 300 entries
+hockey @ time 8: 300 entries
+cosplay @ time 8: 300 entries
+baseball @ time 8: 300 entries
+soccer @ time 8: 300 entries
+laptop @ time 9: 300 entries
+camera @ time 9: 300 entries
+bus @ time 9: 300 entries
+sweater @ time 9: 300 entries
+dress @ time 9: 300 entries
+racing @ time 9: 300 entries
+hockey @ time 9: 300 entries
+cosplay @ time 9: 300 entries
+baseball @ time 9: 300 entries
+soccer @ time 9: 300 entries
+laptop @ time 10: 300 entries
+camera @ time 10: 300 entries
+bus @ time 10: 300 entries
+sweater @ time 10: 300 entries
+dress @ time 10: 300 entries
+racing @ time 10: 300 entries
+hockey @ time 10: 300 entries
+cosplay @ time 10: 300 entries
+baseball @ time 10: 300 entries
+soccer @ time 10: 300 entries
+
+Total CLEAR samples: 30000
+
+Task sizes:
+Task 0: 3000
+Task 1: 3000
+Task 2: 3000
+Task 3: 3000
+Task 4: 3000
+Task 5: 3000
+Task 6: 3000
+Task 7: 3000
+Task 8: 3000
+Task 9: 3000
+
+===== DATASET: CLEAR =====
+
+=======================================================
+  TASK 0
+=======================================================
+
+--- Evaluation ---
+TIL: [50.2]
+CIL: [50.2]
+
+=======================================================
+  TASK 1
+=======================================================
+
+--- Evaluation ---
+TIL: [46.4 60.2]
+CIL: [46.4 60.2]
+
+=======================================================
+  TASK 2
+=======================================================
+
+--- Evaluation ---
+TIL: [52.4 58.5 72.8]
+CIL: [52.4 58.5 72.8]
+
+=======================================================
+  TASK 3
+=======================================================
+
+--- Evaluation ---
+TIL: [51.8 56.3 65.1 80.5]
+CIL: [51.8 56.3 65.1 80.5]
+
+=======================================================
+  TASK 4
+=======================================================
+
+--- Evaluation ---
+TIL: [49.8 53.8 58.5 65.6 79.9]
+CIL: [49.8 53.8 58.5 65.6 79.9]
+
+=======================================================
+  TASK 5
+=======================================================
+
+--- Evaluation ---
+TIL: [47.6 50.4 55.3 58.2 61.8 74.7]
+CIL: [47.6 50.4 55.3 58.2 61.8 74.7]
+
+=======================================================
+  TASK 6
+=======================================================
+
+--- Evaluation ---
+TIL: [51.3 55.3 59.1 61.9 65.  67.9 84.8]
+CIL: [51.3 55.3 59.1 61.9 65.  67.9 84.8]
+
+=======================================================
+  TASK 7
+=======================================================
+
+--- Evaluation ---
+TIL: [54.1 58.2 61.8 63.7 64.8 67.2 71.6 87.7]
+CIL: [54.1 58.2 61.8 63.7 64.8 67.2 71.6 87.7]
+
+=======================================================
+  TASK 8
+=======================================================
+
+--- Evaluation ---
+TIL: [53.8 57.  59.8 61.7 61.8 64.1 65.3 72.2 86.6]
+CIL: [53.8 57.  59.8 61.7 61.8 64.1 65.3 72.2 86.6]
+
+=======================================================
+  TASK 9
+=======================================================
+
+--- Evaluation ---
+TIL: [56.8 59.3 63.9 65.5 67.  66.7 69.2 71.9 79.1 95.5]
+CIL: [56.8 59.3 63.9 65.5 67.  66.7 69.2 71.9 79.1 95.5]
+
+===== FINAL =====
+
+TIL FINAL ACC: 69.50
+
+CIL FINAL ACC: 69.50
+===== CLEAR | Buffer=4000 | Seed=44 =====
+laptop @ time 1: 300 entries
+camera @ time 1: 300 entries
+bus @ time 1: 300 entries
+sweater @ time 1: 300 entries
+dress @ time 1: 300 entries
+racing @ time 1: 300 entries
+hockey @ time 1: 300 entries
+cosplay @ time 1: 300 entries
+baseball @ time 1: 300 entries
+soccer @ time 1: 300 entries
+laptop @ time 2: 300 entries
+camera @ time 2: 300 entries
+bus @ time 2: 300 entries
+sweater @ time 2: 300 entries
+dress @ time 2: 300 entries
+racing @ time 2: 300 entries
+hockey @ time 2: 300 entries
+cosplay @ time 2: 300 entries
+baseball @ time 2: 300 entries
+soccer @ time 2: 300 entries
+laptop @ time 3: 300 entries
+camera @ time 3: 300 entries
+bus @ time 3: 300 entries
+sweater @ time 3: 300 entries
+dress @ time 3: 300 entries
+racing @ time 3: 300 entries
+hockey @ time 3: 300 entries
+cosplay @ time 3: 300 entries
+baseball @ time 3: 300 entries
+soccer @ time 3: 300 entries
+laptop @ time 4: 300 entries
+camera @ time 4: 300 entries
+bus @ time 4: 300 entries
+sweater @ time 4: 300 entries
+dress @ time 4: 300 entries
+racing @ time 4: 300 entries
+hockey @ time 4: 300 entries
+cosplay @ time 4: 300 entries
+baseball @ time 4: 300 entries
+soccer @ time 4: 300 entries
+laptop @ time 5: 300 entries
+camera @ time 5: 300 entries
+bus @ time 5: 300 entries
+sweater @ time 5: 300 entries
+dress @ time 5: 300 entries
+racing @ time 5: 300 entries
+hockey @ time 5: 300 entries
+cosplay @ time 5: 300 entries
+baseball @ time 5: 300 entries
+soccer @ time 5: 300 entries
+laptop @ time 6: 300 entries
+camera @ time 6: 300 entries
+bus @ time 6: 300 entries
+sweater @ time 6: 300 entries
+dress @ time 6: 300 entries
+racing @ time 6: 300 entries
+hockey @ time 6: 300 entries
+cosplay @ time 6: 300 entries
+baseball @ time 6: 300 entries
+soccer @ time 6: 300 entries
+laptop @ time 7: 300 entries
+camera @ time 7: 300 entries
+bus @ time 7: 300 entries
+sweater @ time 7: 300 entries
+dress @ time 7: 300 entries
+racing @ time 7: 300 entries
+hockey @ time 7: 300 entries
+cosplay @ time 7: 300 entries
+baseball @ time 7: 300 entries
+soccer @ time 7: 300 entries
+laptop @ time 8: 300 entries
+camera @ time 8: 300 entries
+bus @ time 8: 300 entries
+sweater @ time 8: 300 entries
+dress @ time 8: 300 entries
+racing @ time 8: 300 entries
+hockey @ time 8: 300 entries
+cosplay @ time 8: 300 entries
+baseball @ time 8: 300 entries
+soccer @ time 8: 300 entries
+laptop @ time 9: 300 entries
+camera @ time 9: 300 entries
+bus @ time 9: 300 entries
+sweater @ time 9: 300 entries
+dress @ time 9: 300 entries
+racing @ time 9: 300 entries
+hockey @ time 9: 300 entries
+cosplay @ time 9: 300 entries
+baseball @ time 9: 300 entries
+soccer @ time 9: 300 entries
+laptop @ time 10: 300 entries
+camera @ time 10: 300 entries
+bus @ time 10: 300 entries
+sweater @ time 10: 300 entries
+dress @ time 10: 300 entries
+racing @ time 10: 300 entries
+hockey @ time 10: 300 entries
+cosplay @ time 10: 300 entries
+baseball @ time 10: 300 entries
+soccer @ time 10: 300 entries
+
+Total CLEAR samples: 30000
+
+Task sizes:
+Task 0: 3000
+Task 1: 3000
+Task 2: 3000
+Task 3: 3000
+Task 4: 3000
+Task 5: 3000
+Task 6: 3000
+Task 7: 3000
+Task 8: 3000
+Task 9: 3000
+
+===== DATASET: CLEAR =====
+
+=======================================================
+  TASK 0
+=======================================================
+
+--- Evaluation ---
+TIL: [50.5]
+CIL: [50.5]
+
+=======================================================
+  TASK 1
+=======================================================
+
+--- Evaluation ---
+TIL: [41.6 49.5]
+CIL: [41.6 49.5]
+
+=======================================================
+  TASK 2
+=======================================================
+
+--- Evaluation ---
+TIL: [50.1 56.3 74.7]
+CIL: [50.1 56.3 74.7]
+
+=======================================================
+  TASK 3
+=======================================================
+
+--- Evaluation ---
+TIL: [48.  50.2 58.1 70.6]
+CIL: [48.  50.2 58.1 70.6]
+
+=======================================================
+  TASK 4
+=======================================================
+
+--- Evaluation ---
+TIL: [55.1 58.8 64.4 73.  88.7]
+CIL: [55.1 58.8 64.4 73.  88.7]
+
+=======================================================
+  TASK 5
+=======================================================
+
+--- Evaluation ---
+TIL: [50.1 53.  60.  62.2 67.6 83.2]
+CIL: [50.1 53.  60.  62.2 67.6 83.2]
+
+=======================================================
+  TASK 6
+=======================================================
+
+--- Evaluation ---
+TIL: [53.3 53.2 58.2 61.  62.2 64.8 80.6]
+CIL: [53.3 53.2 58.2 61.  62.2 64.8 80.6]
+
+=======================================================
+  TASK 7
+=======================================================
+
+--- Evaluation ---
+TIL: [51.8 54.5 56.7 60.1 61.  61.3 65.2 79.2]
+CIL: [51.8 54.5 56.7 60.1 61.  61.3 65.2 79.2]
+
+=======================================================
+  TASK 8
+=======================================================
+
+--- Evaluation ---
+TIL: [52.6 55.2 57.9 60.1 60.9 62.6 63.  71.8 83.2]
+CIL: [52.6 55.2 57.9 60.1 60.9 62.6 63.  71.8 83.2]
+
+=======================================================
+  TASK 9
+=======================================================
+
+--- Evaluation ---
+TIL: [57.3 57.4 61.  64.1 63.7 65.3 67.  70.9 78.  94.2]
+CIL: [57.3 57.4 61.  64.1 63.7 65.3 67.  70.9 78.  94.2]
+
+===== FINAL =====
+
+TIL FINAL ACC: 67.88
+
+CIL FINAL ACC: 67.88
+===== CLEAR | Buffer=4000 | Seed=45 =====
+laptop @ time 1: 300 entries
+camera @ time 1: 300 entries
+bus @ time 1: 300 entries
+sweater @ time 1: 300 entries
+dress @ time 1: 300 entries
+racing @ time 1: 300 entries
+hockey @ time 1: 300 entries
+cosplay @ time 1: 300 entries
+baseball @ time 1: 300 entries
+soccer @ time 1: 300 entries
+laptop @ time 2: 300 entries
+camera @ time 2: 300 entries
+bus @ time 2: 300 entries
+sweater @ time 2: 300 entries
+dress @ time 2: 300 entries
+racing @ time 2: 300 entries
+hockey @ time 2: 300 entries
+cosplay @ time 2: 300 entries
+baseball @ time 2: 300 entries
+soccer @ time 2: 300 entries
+laptop @ time 3: 300 entries
+camera @ time 3: 300 entries
+bus @ time 3: 300 entries
+sweater @ time 3: 300 entries
+dress @ time 3: 300 entries
+racing @ time 3: 300 entries
+hockey @ time 3: 300 entries
+cosplay @ time 3: 300 entries
+baseball @ time 3: 300 entries
+soccer @ time 3: 300 entries
+laptop @ time 4: 300 entries
+camera @ time 4: 300 entries
+bus @ time 4: 300 entries
+sweater @ time 4: 300 entries
+dress @ time 4: 300 entries
+racing @ time 4: 300 entries
+hockey @ time 4: 300 entries
+cosplay @ time 4: 300 entries
+baseball @ time 4: 300 entries
+soccer @ time 4: 300 entries
+laptop @ time 5: 300 entries
+camera @ time 5: 300 entries
+bus @ time 5: 300 entries
+sweater @ time 5: 300 entries
+dress @ time 5: 300 entries
+racing @ time 5: 300 entries
+hockey @ time 5: 300 entries
+cosplay @ time 5: 300 entries
+baseball @ time 5: 300 entries
+soccer @ time 5: 300 entries
+laptop @ time 6: 300 entries
+camera @ time 6: 300 entries
+bus @ time 6: 300 entries
+sweater @ time 6: 300 entries
+dress @ time 6: 300 entries
+racing @ time 6: 300 entries
+hockey @ time 6: 300 entries
+cosplay @ time 6: 300 entries
+baseball @ time 6: 300 entries
+soccer @ time 6: 300 entries
+laptop @ time 7: 300 entries
+camera @ time 7: 300 entries
+bus @ time 7: 300 entries
+sweater @ time 7: 300 entries
+dress @ time 7: 300 entries
+racing @ time 7: 300 entries
+hockey @ time 7: 300 entries
+cosplay @ time 7: 300 entries
+baseball @ time 7: 300 entries
+soccer @ time 7: 300 entries
+laptop @ time 8: 300 entries
+camera @ time 8: 300 entries
+bus @ time 8: 300 entries
+sweater @ time 8: 300 entries
+dress @ time 8: 300 entries
+racing @ time 8: 300 entries
+hockey @ time 8: 300 entries
+cosplay @ time 8: 300 entries
+baseball @ time 8: 300 entries
+soccer @ time 8: 300 entries
+laptop @ time 9: 300 entries
+camera @ time 9: 300 entries
+bus @ time 9: 300 entries
+sweater @ time 9: 300 entries
+dress @ time 9: 300 entries
+racing @ time 9: 300 entries
+hockey @ time 9: 300 entries
+cosplay @ time 9: 300 entries
+baseball @ time 9: 300 entries
+soccer @ time 9: 300 entries
+laptop @ time 10: 300 entries
+camera @ time 10: 300 entries
+bus @ time 10: 300 entries
+sweater @ time 10: 300 entries
+dress @ time 10: 300 entries
+racing @ time 10: 300 entries
+hockey @ time 10: 300 entries
+cosplay @ time 10: 300 entries
+baseball @ time 10: 300 entries
+soccer @ time 10: 300 entries
+
+Total CLEAR samples: 30000
+
+Task sizes:
+Task 0: 3000
+Task 1: 3000
+Task 2: 3000
+Task 3: 3000
+Task 4: 3000
+Task 5: 3000
+Task 6: 3000
+Task 7: 3000
+Task 8: 3000
+Task 9: 3000
+
+===== DATASET: CLEAR =====
+
+=======================================================
+  TASK 0
+=======================================================
+
+--- Evaluation ---
+TIL: [55.9]
+CIL: [55.9]
+
+=======================================================
+  TASK 1
+=======================================================
+
+--- Evaluation ---
+TIL: [48.8 68.4]
+CIL: [48.8 68.4]
+
+=======================================================
+  TASK 2
+=======================================================
+
+--- Evaluation ---
+TIL: [50.2 59.3 78.6]
+CIL: [50.2 59.3 78.6]
+
+=======================================================
+  TASK 3
+=======================================================
+
+--- Evaluation ---
+TIL: [45.2 47.4 55.1 69.7]
+CIL: [45.2 47.4 55.1 69.7]
+
+=======================================================
+  TASK 4
+=======================================================
+
+--- Evaluation ---
+TIL: [46.9 50.7 58.3 62.7 77. ]
+CIL: [46.9 50.7 58.3 62.7 77. ]
+
+=======================================================
+  TASK 5
+=======================================================
+
+--- Evaluation ---
+TIL: [48.  50.8 56.  59.8 66.7 82.2]
+CIL: [48.  50.8 56.  59.8 66.7 82.2]
+
+=======================================================
+  TASK 6
+=======================================================
+
+--- Evaluation ---
+TIL: [53.3 54.6 57.7 61.7 62.2 66.9 82. ]
+CIL: [53.3 54.6 57.7 61.7 62.2 66.9 82. ]
+
+=======================================================
+  TASK 7
+=======================================================
+
+--- Evaluation ---
+TIL: [44.1 44.3 46.5 49.1 47.8 50.2 52.9 66.4]
+CIL: [44.1 44.3 46.5 49.1 47.8 50.2 52.9 66.4]
+
+=======================================================
+  TASK 8
+=======================================================
+
+--- Evaluation ---
+TIL: [51.6 55.9 59.6 62.3 64.1 63.  64.9 72.1 86.7]
+CIL: [51.6 55.9 59.6 62.3 64.1 63.  64.9 72.1 86.7]
+
+=======================================================
+  TASK 9
+=======================================================
+
+--- Evaluation ---
+TIL: [56.1 59.7 62.7 65.2 66.1 66.7 67.4 71.9 79.9 95.6]
+CIL: [56.1 59.7 62.7 65.2 66.1 66.7 67.4 71.9 79.9 95.6]
+
+===== FINAL =====
+
+TIL FINAL ACC: 69.12
+
+CIL FINAL ACC: 69.12
+===== CLEAR | Buffer=4000 | Seed=46 =====
+laptop @ time 1: 300 entries
+camera @ time 1: 300 entries
+bus @ time 1: 300 entries
+sweater @ time 1: 300 entries
+dress @ time 1: 300 entries
+racing @ time 1: 300 entries
+hockey @ time 1: 300 entries
+cosplay @ time 1: 300 entries
+baseball @ time 1: 300 entries
+soccer @ time 1: 300 entries
+laptop @ time 2: 300 entries
+camera @ time 2: 300 entries
+bus @ time 2: 300 entries
+sweater @ time 2: 300 entries
+dress @ time 2: 300 entries
+racing @ time 2: 300 entries
+hockey @ time 2: 300 entries
+cosplay @ time 2: 300 entries
+baseball @ time 2: 300 entries
+soccer @ time 2: 300 entries
+laptop @ time 3: 300 entries
+camera @ time 3: 300 entries
+bus @ time 3: 300 entries
+sweater @ time 3: 300 entries
+dress @ time 3: 300 entries
+racing @ time 3: 300 entries
+hockey @ time 3: 300 entries
+cosplay @ time 3: 300 entries
+baseball @ time 3: 300 entries
+soccer @ time 3: 300 entries
+laptop @ time 4: 300 entries
+camera @ time 4: 300 entries
+bus @ time 4: 300 entries
+sweater @ time 4: 300 entries
+dress @ time 4: 300 entries
+racing @ time 4: 300 entries
+hockey @ time 4: 300 entries
+cosplay @ time 4: 300 entries
+baseball @ time 4: 300 entries
+soccer @ time 4: 300 entries
+laptop @ time 5: 300 entries
+camera @ time 5: 300 entries
+bus @ time 5: 300 entries
+sweater @ time 5: 300 entries
+dress @ time 5: 300 entries
+racing @ time 5: 300 entries
+hockey @ time 5: 300 entries
+cosplay @ time 5: 300 entries
+baseball @ time 5: 300 entries
+soccer @ time 5: 300 entries
+laptop @ time 6: 300 entries
+camera @ time 6: 300 entries
+bus @ time 6: 300 entries
+sweater @ time 6: 300 entries
+dress @ time 6: 300 entries
+racing @ time 6: 300 entries
+hockey @ time 6: 300 entries
+cosplay @ time 6: 300 entries
+baseball @ time 6: 300 entries
+soccer @ time 6: 300 entries
+laptop @ time 7: 300 entries
+camera @ time 7: 300 entries
+bus @ time 7: 300 entries
+sweater @ time 7: 300 entries
+dress @ time 7: 300 entries
+racing @ time 7: 300 entries
+hockey @ time 7: 300 entries
+cosplay @ time 7: 300 entries
+baseball @ time 7: 300 entries
+soccer @ time 7: 300 entries
+laptop @ time 8: 300 entries
+camera @ time 8: 300 entries
+bus @ time 8: 300 entries
+sweater @ time 8: 300 entries
+dress @ time 8: 300 entries
+racing @ time 8: 300 entries
+hockey @ time 8: 300 entries
+cosplay @ time 8: 300 entries
+baseball @ time 8: 300 entries
+soccer @ time 8: 300 entries
+laptop @ time 9: 300 entries
+camera @ time 9: 300 entries
+bus @ time 9: 300 entries
+sweater @ time 9: 300 entries
+dress @ time 9: 300 entries
+racing @ time 9: 300 entries
+hockey @ time 9: 300 entries
+cosplay @ time 9: 300 entries
+baseball @ time 9: 300 entries
+soccer @ time 9: 300 entries
+laptop @ time 10: 300 entries
+camera @ time 10: 300 entries
+bus @ time 10: 300 entries
+sweater @ time 10: 300 entries
+dress @ time 10: 300 entries
+racing @ time 10: 300 entries
+hockey @ time 10: 300 entries
+cosplay @ time 10: 300 entries
+baseball @ time 10: 300 entries
+soccer @ time 10: 300 entries
+
+Total CLEAR samples: 30000
+
+Task sizes:
+Task 0: 3000
+Task 1: 3000
+Task 2: 3000
+Task 3: 3000
+Task 4: 3000
+Task 5: 3000
+Task 6: 3000
+Task 7: 3000
+Task 8: 3000
+Task 9: 3000
+
+===== DATASET: CLEAR =====
+
+=======================================================
+  TASK 0
+=======================================================
+
+--- Evaluation ---
+TIL: [52.3]
+CIL: [52.3]
+
+=======================================================
+  TASK 1
+=======================================================
+
+--- Evaluation ---
+TIL: [46.4 66.1]
+CIL: [46.4 66.1]
+
+=======================================================
+  TASK 2
+=======================================================
+
+--- Evaluation ---
+TIL: [49.4 56.4 75.9]
+CIL: [49.4 56.4 75.9]
+
+=======================================================
+  TASK 3
+=======================================================
+
+--- Evaluation ---
+TIL: [50.9 53.4 61.1 79.8]
+CIL: [50.9 53.4 61.1 79.8]
+
+=======================================================
+  TASK 4
+=======================================================
+
+--- Evaluation ---
+TIL: [49.  50.5 57.9 64.8 75.1]
+CIL: [49.  50.5 57.9 64.8 75.1]
+
+=======================================================
+  TASK 5
+=======================================================
+
+--- Evaluation ---
+TIL: [53.5 56.3 61.8 67.3 73.8 90.3]
+CIL: [53.5 56.3 61.8 67.3 73.8 90.3]
+
+=======================================================
+  TASK 6
+=======================================================
+
+--- Evaluation ---
+TIL: [54.4 56.2 63.3 66.6 67.8 75.1 91.5]
+CIL: [54.4 56.2 63.3 66.6 67.8 75.1 91.5]
+
+=======================================================
+  TASK 7
+=======================================================
+
+--- Evaluation ---
+TIL: [52.  54.7 57.2 61.2 62.6 66.  69.5 87.3]
+CIL: [52.  54.7 57.2 61.2 62.6 66.  69.5 87.3]
+
+=======================================================
+  TASK 8
+=======================================================
+
+--- Evaluation ---
+TIL: [52.2 54.1 57.7 58.8 60.1 60.3 63.6 71.2 86.3]
+CIL: [52.2 54.1 57.7 58.8 60.1 60.3 63.6 71.2 86.3]
+
+=======================================================
+  TASK 9
+=======================================================
+
+--- Evaluation ---
+TIL: [55.4 57.8 61.2 63.7 65.8 66.7 66.6 72.1 80.3 95.6]
+CIL: [55.4 57.8 61.2 63.7 65.8 66.7 66.6 72.1 80.3 95.6]
+
+===== FINAL =====
+
+TIL FINAL ACC: 68.51
+
+CIL FINAL ACC: 68.51
+

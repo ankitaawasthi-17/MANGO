@@ -1,0 +1,459 @@
+______________________________________________________________________________________________
+CURRENT:
+______________________________________________________________________________________________
+
+1. Tinyimagenet buffer 4000: -----------------------DONE!----------------------------
+
+
+for seed in 42 43 44 45 46; do 
+  echo "===== Running TINY | Buffer=4000 | Seed=$seed ====="
+  python3 main_tiny.py --dataset tiny --buffer_size 4000 --seed $seed
+done
+
+2. CIFAR 100, buffer 2000: ------------------------DONE!
+
+
+for seed in 42 43 44 45 46; do 
+  echo "===== Running CIFAR | Buffer=2000 | Seed=$seed ====="
+  python3 main_tiny.py --dataset cifar --buffer_size 2000 --seed $seed
+done
+
+3. CIFAR 100, buffer 4000: ------------------------DONE!------------------------------------
+
+
+for seed in 42 43 44 45 46; do 
+  echo "===== Running CIFAR | Buffer=4000 | Seed=$seed ====="
+  python3 main_tiny.py --dataset cifar --buffer_size 4000 --seed $seed
+done
+
+
+4. Tinyimagenet buffer 2000: ------------------------DONE!...--------------------------
+
+
+for seed in 42 43 44 45 46; do 
+  echo "===== Running TINY | Buffer=2000 | Seed=$seed ====="
+  python3 main_tiny.py --dataset tiny --buffer_size 2000 --seed $seed
+done
+
+5. CIFAR 100, buffer 1000: ------------------------DONE!...----------------------------
+
+
+for seed in 42 43 44 45 46; do 
+  echo "===== Running CIFAR | Buffer=1000 | Seed=$seed ====="
+  python3 main_tiny.py --dataset cifar --buffer_size 1000 --seed $seed
+done
+
+
+
+
+6. DER++ CIFAR-100 baseline BUffer 2000, 4000, 1000, 5 seed---------DONE!...--------------
+
+for buffer in 2000 4000 1000; do
+  for seed in 42 43 44 45 46; do
+    echo "===== DER++ CIFAR | Buffer=$buffer | Seed=$seed ====="
+    python3 main_derpp.py --dataset cifar --buffer_size $buffer --seed $seed 
+  done
+done
+
+
+7. DER++ Tiny baseline BUffer 2000, 4000 5 seed---------DONE!...--------------
+
+for buffer in 4000 2000; do
+  for seed in 42 43 44 45 46; do
+    echo "===== DER++ TINY | Buffer=$buffer | Seed=$seed ====="
+    python3 main_derpp.py --dataset tiny --buffer_size $buffer --seed $seed --lr 0.05 
+  done
+done
+
+----------------------------------------------------------------------------------------------------
+
+8. LODE CIFAR-100 baseline BUffer 2000, 4000, 1000, 5 seed---------DONE...--------------
+
+for buffer in 2000 4000 1000; do
+  for seed in 42 43 44 45 46; do
+    echo "===== LODE CIFAR | Buffer=$buffer | Seed=$seed ====="
+    python3 main_lode.py --dataset cifar --buffer_size $buffer --seed $seed
+  done
+done
+
+
+
+
+
+9. LODE Tiny baseline BUffer 2000, 4000 5 seed---------DONE...--------------
+
+
+for buffer in 2000 4000; do
+  for seed in 42 43 44 45 46; do
+    echo "===== LODE TINY | Buffer=$buffer | Seed=$seed ====="
+    python3 main_lode.py --dataset tiny --buffer_size $buffer --seed $seed --lr 0.05
+  done
+done
+
+
+
+
+1.iCARL CIFAR-100 baseline BUffer 2000, 4000, 1000, 5 seed
+
+
+for buffer in 2000 4000 1000; do
+  for seed in 42 43 44 45 46; do
+    echo "===== ICARL CIFAR | Buffer=$buffer | Seed=$seed ====="
+    python3 main_icarl.py --dataset cifar --buffer_size $buffer --seed $seed
+  done
+done
+
+2. iCARL Tiny baseline BUffer 2000, 4000 5 seed
+
+
+for buffer in 2000 4000; do
+  for seed in 42 43 44 45 46; do
+    echo "===== ICARL TINY | Buffer=$buffer | Seed=$seed ====="
+    python3 main_icarl.py --dataset tiny --buffer_size $buffer --seed $seed --lr 0.05
+  done
+done
+
+
+
+
+1.LUCIR CIFAR-100 baseline BUffer 2000, 4000, 1000, 5 seed
+
+
+for buffer in 1000 2000 4000; do
+  for seed in 42 43 44 45 46; do
+    echo "===== LUCIR CIFAR | Buffer=$buffer | Seed=$seed ====="
+    python3 main_lucir.py --dataset cifar --buffer_size $buffer --seed $seed 
+  done
+done
+
+2.LUCIR Tiny baseline BUffer 2000, 4000 5 seed
+
+
+for buffer in 2000 4000; do
+  for seed in 42 43 44 45 46; do
+    echo "===== LUCIR TINY | Buffer=$buffer | Seed=$seed ====="
+    python3 main_lucir.py --dataset tiny --buffer_size $buffer --seed $seed 
+  done
+done
+
+
+
+
+3.ER CIFAR-100 baseline BUffer 2000, 4000, 1000, 5 seed
+
+for buffer in 1000 2000 4000; do
+  for seed in 42 43 44 45 46; do
+    echo "===== ER CIFAR | Buffer=$buffer | Seed=$seed ====="
+    python3 main_er.py --dataset cifar --buffer_size $buffer --seed $seed
+  done
+done
+
+
+4. ER Tiny baseline BUffer 2000, 4000 5 seed
+
+for buffer in 2000 4000; do
+  for seed in 42 43 44 45 46; do
+    echo "===== ER TINY | Buffer=$buffer | Seed=$seed ====="
+    python3 main_er.py --dataset tiny --buffer_size $buffer --seed $seed
+  done
+done
+
+
+
+5.G-Dumb CIFAR-100 baseline BUffer 2000, 4000, 1000, 5 seed
+
+
+for buffer in 1000 2000 4000; do
+  for seed in 42 43 44 45 46; do
+    echo "===== GDUMB CIFAR | Buffer=$buffer | Seed=$seed ====="
+    python3 main_gdumb.py --dataset cifar --buffer_size $buffer --seed $seed
+  done
+done
+
+
+6.G-Dumb Tiny baseline BUffer 2000, 4000 5 seed
+
+for buffer in 2000 4000; do
+  for seed in 42 43 44 45 46; do
+    echo "===== GDUMB TINY | Buffer=$buffer | Seed=$seed ====="
+    python3 main_gdumb.py --dataset tiny --buffer_size $buffer --seed $seed
+  done
+done
+
+
+
+
+1. ER-ACE CIFAR-100 baseline BUffer 2000, 4000, 1000, 5 seed---------ONGOING...--------------
+
+for buf in 1000 2000 4000; do
+  for seed in 42 43 44 45 46; do
+    echo "ER-ACE CIFAR | Buffer=$buf | Seed=$seed"
+    python3 main_erace.py \
+      --dataset cifar \
+      --seed $seed \
+      --buffer_size $buf
+  done
+done
+
+
+2. ER-ACE Tiny baseline BUffer 2000, 4000 5 seed---------ONGOING...--------------
+
+for buf in 2000 4000; do
+  for seed in 42 43 44 45 46; do
+    echo ""
+    echo "=========================================="
+    echo "ER-ACE TINY | Buffer=$buf | Seed=$seed"
+    echo "=========================================="
+
+    python3 main_erace.py \
+      --dataset tiny \
+      --seed $seed \
+      --buffer_size $buf
+  done
+done
+
+
+
+3. FT CIFAR-100 baseline  5 seed---------ONGOING...--------------
+
+for seed in 42 43 44 45 46; do
+  echo ""
+  echo "=========================================="
+  echo "FINETUNE CIFAR | Seed=$seed"
+  echo "=========================================="
+
+  python3 main_finetune.py \
+    --dataset cifar \
+    --seed $seed 
+done
+
+
+4. FT TINY baseline 5 seed---------ONGOING...--------------
+
+
+for seed in 42 43 44 45 46; do
+  echo ""
+  echo "=========================================="
+  echo "FINETUNE TINY | Seed=$seed"
+  echo "=========================================="
+
+  python3 main_finetune.py \
+    --dataset tiny \
+    --seed $seed 
+done
+
+
+
+
+
+
+________________________________________________________________________________
+
+NEXT commands:
+_________________________________________________________________________________
+
+1. MANGO on CLEAR-10 , baseline BUffer 2000, 4000 5 seed
+
+
+
+for buffer in 2000 4000; do
+  for seed in 42 43 44 45 46; do
+    echo "===== CLEAR | Buffer=$buffer | Seed=$seed ====="
+    python3 main_clear.py --buffer_size $buffer --seed $seed
+  done
+done
+
+
+
+CLEAR:
+OCL_v1_AMPHEWC/
+│
+├── data/
+│   ├── task_split.py                  # CIFAR (unchanged)
+│   ├── task_split_tinyimagenet.py     # Tiny (unchanged)
+│   └── task_split_clear.py            # ✅ NEW (CLEAR loader)
+│
+├── train/
+│   ├── trainer_tinyimagenet.py        # original (unchanged)
+│   └── trainer_clear.py               # ✅ NEW (CLEAR trainer)
+│
+├── models/
+│   └── ocl_resnet18_tiny.py           # reused (unchanged)
+│
+├── main.py                           # CIFAR (unchanged)
+├── main_tiny.py                      # Tiny (unchanged)
+└── main_clear.py                     # ✅ NEW (CLEAR entry)
+
+
+
+
+data/CLEAR/
+  train_image_only/
+    class_names.txt
+    labeled_images/
+      1/laptop/*.jpg
+      1/camera/*.jpg
+      ...
+    labeled_metadata/
+      1/laptop.json
+      1/camera.json
+      ...
+
+
+
+CLEAR BASELINES:er ft er_ace gdumb derpp lode
+
+
+for model in er ft er_ace gdumb derpp lode; do
+  for buffer in 2000 4000; do
+    for seed in 42 43 44 45 46; do
+    echo "===== RUNNING: $model | CLEAR | Buffer=$buffer | Seed=$seed ====="
+      python3 main_clear.py --model $model --buffer_size $buffer --seed $seed
+    done
+  done
+done
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#####CLAUDE ABLATION COMMANDS: (FILES saved in CLAUDE ablation codes folder)
+
+
+1. TINY+CIFAR ON ALL ABLATIONS:
+
+#!/bin/bash
+# run_multiseed_multibuffer.sh
+
+SEEDS=(42 43 44 45 46)
+METHODS=("ours" "fixed_lambda" "no_reg" "er")
+RESULTS_DIR="./results_ablation"
+
+echo "======================================================="
+echo "  Multi-Seed Multi-Buffer Ablation"
+echo "======================================================="
+
+# ── TinyImageNet: buffer 2000 and 4000 ───────────────────
+TINY_BUFFERS=(2000 4000)
+
+for BUFFER in "${TINY_BUFFERS[@]}"; do
+    for METHOD in "${METHODS[@]}"; do
+        for SEED in "${SEEDS[@]}"; do
+            echo ""
+            echo "  [TINY] Method=$METHOD | Buffer=$BUFFER | Seed=$SEED"
+            python3 main_tiny.py \
+                --method      $METHOD \
+                --dataset     tiny \
+                --seed        $SEED \
+                --buffer_size $BUFFER \
+                --results_dir $RESULTS_DIR/tiny_buf${BUFFER}
+        done
+    done
+done
+
+# ── CIFAR-100: buffer 1000, 2000, 4000 ───────────────────
+CIFAR_BUFFERS=(1000 2000 4000)
+
+for BUFFER in "${CIFAR_BUFFERS[@]}"; do
+    for METHOD in "${METHODS[@]}"; do
+        for SEED in "${SEEDS[@]}"; do
+            echo ""
+            echo "  [CIFAR] Method=$METHOD | Buffer=$BUFFER | Seed=$SEED"
+            python3 main_tiny.py \
+                --method      $METHOD \
+                --dataset     cifar \
+                --seed        $SEED \
+                --buffer_size $BUFFER \
+                --results_dir $RESULTS_DIR/cifar_buf${BUFFER}
+        done
+    done
+done
+
+echo ""
+echo "======================================================="
+echo "  Aggregating all results..."
+echo "======================================================="
+
+python3 - << 'EOF'
+import numpy as np, os, glob
+
+methods = ["ours", "fixed_lambda", "no_reg", "er"]
+
+def load_metrics(path):
+    m   = np.load(path)
+    n   = m.shape[0]
+    acc = np.mean(m[n-1, :n])
+    bwt = np.mean([m[n-1, t] - m[t, t] for t in range(n-1)])
+    aaa = np.mean([np.mean(m[t, :t+1])  for t in range(n)])
+    wc  = np.mean([np.min(m[t,  :t+1])  for t in range(n)])
+    return acc, bwt, aaa, wc
+
+def fmt(vals):
+    if not vals: return "    N/A   "
+    return f"{np.mean(vals):5.2f}±{np.std(vals):.2f}"
+
+configs = [
+    ("tiny",  2000, "./results_ablation/tiny_buf2000"),
+    ("tiny",  4000, "./results_ablation/tiny_buf4000"),
+    ("cifar", 1000, "./results_ablation/cifar_buf1000"),
+    ("cifar", 2000, "./results_ablation/cifar_buf2000"),
+    ("cifar", 4000, "./results_ablation/cifar_buf4000"),
+]
+
+for dataset, buf, results_dir in configs:
+    print(f"\n{'='*70}")
+    print(f"  {dataset.upper()} | Buffer={buf}")
+    print(f"{'='*70}")
+    hdr = f"  {'Method':<14} {'CIL-ACC':>12} {'TIL-ACC':>12} {'CIL-BWT':>12} {'WC-Acc':>12} {'AAA':>12}"
+    print(hdr)
+    print("  " + "─" * (len(hdr) - 2))
+
+    for method in methods:
+        cil_accs, til_accs, bwts, wcs, aaas = [], [], [], [], []
+        pattern = os.path.join(results_dir, dataset, method, "seed_*")
+        for seed_dir in sorted(glob.glob(pattern)):
+            cp = os.path.join(seed_dir, "acc_matrix_cil.npy")
+            tp = os.path.join(seed_dir, "acc_matrix_til.npy")
+            if not (os.path.exists(cp) and os.path.exists(tp)):
+                continue
+            ca, cb, caaa, cwc = load_metrics(cp)
+            ta, *_            = load_metrics(tp)
+            cil_accs.append(ca); til_accs.append(ta)
+            bwts.append(cb);     aaas.append(caaa); wcs.append(cwc)
+
+        print(f"  {method:<14} {fmt(cil_accs):>12} {fmt(til_accs):>12} "
+              f"{fmt(bwts):>12} {fmt(wcs):>12} {fmt(aaas):>12}")
+
+    if dataset == "tiny":
+        print(f"\n  DER++ ref: CIL=11.61 | TIL=48.87 | BWT=-34.6 | WC=10.35 | AAA=17.85")
+
+print("\nDone.")
+EOF
+
+
+-----------------------------------------------------------
+
+
+2. CLEAR-10 all ABLATIONS:
+
+
+
+# Single run
+python main_clear.py --method ours --seed 42 --buffer_size 2000
+
+# All four ablations, 5 seeds, 2 buffer sizes (full sweep)
+chmod +x run_clear_ablation.sh
+./run_clear_ablation.sh
+
+

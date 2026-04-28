@@ -1,0 +1,21 @@
+# Data (DO NOT PUSH)
+data/
+CLEAR/
+tiny-imagenet-200/
+cifar-100-python/
+
+# Python
+__pycache__/
+*.pyc
+
+# Venv
+venv/
+.env/
+
+# Logs / outputs
+*.log
+results/
+checkpoints/
+
+# System
+.DS_Store
