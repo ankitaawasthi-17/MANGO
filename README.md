@@ -1,187 +1,176 @@
-# OCL-AMPEWC
+# 🥭 MANGO: Memory-Augmented Online Continual Learning with Adaptive Regularization
 
-Online Continual Learning with Adaptive Meta Parameter EWC.
+## Overview
+This repository contains the official implementation of MANGO, an Online Continual Learning (OCL) method that combines experience replay with adaptive regularization to improve stability and mitigate catastrophic forgetting.
 
-## Datasets
-- CIFAR-100 (20 tasks, 5 classes/task)
-- TinyImageNet (20 tasks, 10 classes/task)
+We evaluate MANGO across multiple challenging continual learning benchmarks:
 
-## Run
+- CIFAR-100 (Split-100)
+- TinyImageNet (Split-200)
+- CLEAR-10 (Temporal Continual Learning)
 
-### CIFAR
-python3 main_tiny.py --dataset cifar --buffer_size 2000 --seed 42
-### TinyImageNet
-python3 main_tiny.py --dataset tiny
+The repository also includes strong baselines:
+- ER (Experience Replay)
+- DER++
+- LODE
+- ER-ACE
+- GDumb
+- iCaRL
+- LUCIR
+- Fine-Tuning (FT)
 
-###MultiBuffer-Multiseed Comands
+---
 
-1. Tinyimagenet buffer 4000: -----------------------DONE!----------------------------
+#  Installation
 
+bash git clone https://github.com/ankitaawasthi-17/MANGO.git cd MANGO  python3 -m venv venv source venv/bin/activate  pip install torch torchvision numpy pandas scikit-learn 
 
-for seed in 42 43 44 45 46; do 
-  echo "===== Running TINY | Buffer=4000 | Seed=$seed ====="
-  python3 main_tiny.py --dataset tiny --buffer_size 4000 --seed $seed
-done
+---
 
-2. CIFAR 100, buffer 4000: ------------------------DONE!
+#  Datasets
 
+## CIFAR-100
+- Automatically downloaded via torchvision
 
-for seed in 42 43 44 45 46; do 
-  echo "===== Running CIFAR | Buffer=4000 | Seed=$seed ====="
-  python3 main_tiny.py --dataset cifar --buffer_size 4000 --seed $seed
-done
+---
 
-3. CIFAR 100, buffer 2000: ------------------------DONE!------------------------------------
+## TinyImageNet
 
+Download and place in:
 
-for seed in 42 43 44 45 46; do 
-  echo "===== Running CIFAR | Buffer=2000 | Seed=$seed ====="
-  python3 main_tiny.py --dataset cifar --buffer_size 2000 --seed $seed
-done
+text data/tiny-imagenet-200/ 
 
+---
 
-4. Tinyimagenet buffer 2000: ------------------------ONGOING...--------------------------
+##  CLEAR-10 (Key Benchmark)
 
+CLEAR-10 is a temporal continual learning dataset, where data is split into 10 sequential time steps instead of random class splits.
 
-for seed in 42 43 44 45 46; do 
-  echo "===== Running TINY | Buffer=2000 | Seed=$seed ====="
-  python3 main_tiny.py --dataset tiny --buffer_size 2000 --seed $seed
-done
+###  Expected Structure
 
-5. CIFAR 100, buffer 1000: ------------------------ONGOING...----------------------------
+text data/CLEAR/   train_image_only/     class_names.txt     labeled_images/       1/laptop/*.jpg       1/camera/*.jpg       ...     labeled_metadata/       1/laptop.json       1/camera.json       ... 
 
+Each folder 1–10 corresponds to a time step, introducing real-world distribution shifts.
 
-for seed in 42 43 44 45 46; do 
-  echo "===== Running CIFAR | Buffer=1000 | Seed=$seed ====="
-  python3 main_tiny.py --dataset cifar --buffer_size 1000 --seed $seed
-done
+---
 
+#  Running Experiments
 
+##  Entry Points
 
+| File | Dataset |
+|------|--------|
+| main.py | CIFAR-100 |
+| main_tiny.py | TinyImageNet + CIFAR |
+| main_clear.py | CLEAR-10 |
 
---------------------------------------------------------------------------------------------------
-BASELINES
---------------------------------------------------------------------------------------------------
+---
 
-1. DER++
+# 🥭 MANGO Experiments
 
-DER++ CIFAR-100 baseline BUffer 2000, 4000, 1000, 5 seed
+## CIFAR-100
 
-for buffer in 2000 4000 1000; do
-  for seed in 42 43 44 45 46; do
-    echo "===== DER++ CIFAR | Buffer=$buffer | Seed=$seed ====="
-    python3 main_derpp.py --dataset cifar --buffer_size $buffer --seed $seed 
-  done
-done
+bash for buffer in 1000 2000 4000; do   for seed in 42 43 44 45 46; do     echo "===== CIFAR | Buffer=$buffer | Seed=$seed ====="     python3 main_tiny.py --dataset cifar --buffer_size $buffer --seed $seed   done done 
 
+---
 
-DER++ Tiny baseline BUffer 2000, 4000 5 seed
+## TinyImageNet
 
-for buffer in 4000 2000; do
-  for seed in 42 43 44 45 46; do
-    echo "===== DER++ TINY | Buffer=$buffer | Seed=$seed ====="
-    python3 main_derpp.py --dataset tiny --buffer_size $buffer --seed $seed --lr 0.05 
-  done
-done
+bash for buffer in 2000 4000; do   for seed in 42 43 44 45 46; do     echo "===== TINY | Buffer=$buffer | Seed=$seed ====="     python3 main_tiny.py --dataset tiny --buffer_size $buffer --seed $seed   done done 
 
-2. LODE
+---
 
-LODE CIFAR-100 baseline BUffer 2000, 4000, 1000, 5 seed---------ONGOING...--------------
+##  CLEAR-10 (Primary Contribution)
 
-for buffer in 2000 4000 1000; do
-  for seed in 42 43 44 45 46; do
-    echo "===== LODE CIFAR | Buffer=$buffer | Seed=$seed ====="
-    python3 main_lode.py --dataset cifar --buffer_size $buffer --seed $seed
-  done
-done
+bash for buffer in 2000 4000; do   for seed in 42 43 44 45 46; do     echo "===== CLEAR | Buffer=$buffer | Seed=$seed ====="     python3 main_clear.py --buffer_size $buffer --seed $seed   done done 
 
-LODE Tiny baseline BUffer 2000, 4000 5 seed---------ONGOING...--------------
+---
 
+# Baselines
 
-for buffer in 2000 4000; do
-  for seed in 42 43 44 45 46; do
-    echo "===== LODE TINY | Buffer=$buffer | Seed=$seed ====="
-    python3 main_lode.py --dataset tiny --buffer_size $buffer --seed $seed --lr 0.05
-  done
-done
+## Example: ER (CIFAR-100)
 
+bash for buffer in 1000 2000 4000; do   for seed in 42 43 44 45 46; do     python3 main_er.py --dataset cifar --buffer_size $buffer --seed $seed   done done 
 
-3. ER
+---
 
-ER CIFAR-100 baseline BUffer 2000, 4000, 1000, 5 seed---------ONGOING...--------------
+## CLEAR Baselines
 
-for buffer in 1000 2000 4000; do
-  for seed in 42 43 44 45 46; do
-    echo "===== ER CIFAR | Buffer=$buffer | Seed=$seed ====="
-    python3 main_er.py --dataset cifar --buffer_size $buffer --seed $seed
-  done
-done
+bash for model in er ft er_ace gdumb derpp lode; do   for buffer in 2000 4000; do     for seed in 42 43 44 45 46; do       echo "===== RUNNING: $model | CLEAR | Buffer=$buffer | Seed=$seed ====="       python3 main_clear.py --model $model --buffer_size $buffer --seed $seed     done   done done 
 
+---
 
-ER Tiny baseline BUffer 2000, 4000 5 seed---------ONGOING...--------------
+#  Ablation Study
 
-for buffer in 2000 4000; do
-  for seed in 42 43 44 45 46; do
-    echo "===== ER TINY | Buffer=$buffer | Seed=$seed ====="
-    python3 main_er.py --dataset tiny --buffer_size $buffer --seed $seed
-  done
-done
+We evaluate the contribution of each component:
 
+- MANGO (full model)
+- Fixed λ (no adaptation)
+- No Regularization
+- Pure Replay (ER)
 
-4. FT
+## Run Full Ablation
 
+bash bash run_multiseed_multibuffer.sh 
 
-6. iCarL
+---
 
+## CLEAR Ablation
 
-iCARL CIFAR-100 baseline BUffer 2000, 4000, 1000, 5 seed---------ONGOING...--------------
+bash bash run_clear_ablation.sh 
 
+---
 
-for buffer in 2000 4000 1000; do
-  for seed in 42 43 44 45 46; do
-    echo "===== ICARL CIFAR | Buffer=$buffer | Seed=$seed ====="
-    python3 main_icarl.py --dataset cifar --buffer_size $buffer --seed $seed
-  done
-done
+#  Evaluation Metrics
 
+We report:
 
-iCARL Tiny baseline BUffer 2000, 4000 5 seed---------ONGOING...--------------
+- CIL Accuracy (Class Incremental)
+- TIL Accuracy (Task Incremental)
+- BWT (Backward Transfer)
+- AAA (Average Accuracy)
+- Worst-Case Accuracy
 
+---
 
-for buffer in 2000 4000; do
-  for seed in 42 43 44 45 46; do
-    echo "===== ICARL TINY | Buffer=$buffer | Seed=$seed ====="
-    python3 main_icarl.py --dataset tiny --buffer_size $buffer --seed $seed --lr 0.05
-  done
-done
+#  Implementation Details
 
+- Backbone: ResNet-18
+- Training: Online (1 epoch per task)
+- Replay buffer sizes: 1000 / 2000 / 4000
+- Seeds: 42–46
 
-7. LUCIR
+CLEAR-specific:
+- task_split_clear.py → temporal data loading  
+- trainer_clear.py → training loop  
 
+---
 
-LUCIR CIFAR-100 baseline BUffer 2000, 4000, 1000, 5 seed---------ONGOING...--------------
+#  Repository Structure
 
+text . ├── data/ ├── models/ ├── train/ ├── Baselines/ ├── main.py ├── main_tiny.py ├── main_clear.py ├── run_ablation.sh ├── run_multiseed_multibuffer.sh └── Results_*.txt 
 
-for buffer in 1000 2000 4000; do
-  for seed in 42 43 44 45 46; do
-    echo "===== LUCIR CIFAR | Buffer=$buffer | Seed=$seed ====="
-    python3 main_lucir.py --dataset cifar --buffer_size $buffer --seed $seed 
-  done
-done
 
-LUCIR Tiny baseline BUffer 2000, 4000 5 seed---------ONGOING...--------------
+---
 
+#  Reproducibility
 
-for buffer in 2000 4000; do
-  for seed in 42 43 44 45 46; do
-    echo "===== LUCIR TINY | Buffer=$buffer | Seed=$seed ====="
-    python3 main_lucir.py --dataset tiny --buffer_size $buffer --seed $seed 
-  done
-done
+All experiments use:
 
+- Seeds: 42–46
+- Buffers: 1000 / 2000 / 4000
+- Single epoch online training
 
-8. G-Dumb
+---
 
+#  Citation
 
-9. ER-ACE
+bibtex @article{mango2026,   title={MANGO: Memory-Augmented Online Continual Learning with Adaptive Regularization},   author={Awasthi, Ankita},   year={2026} } 
 
+---
+
+#  Acknowledgements
+
+This work builds on prior continual learning methods including ER, DER++, LODE, and others.
+
+--
